@@ -10,7 +10,9 @@
     ```
 
 2.  Grant `direnv` permission to load `.envrc`. This will use `flake.nix` to
-    make `cabal` available in your shell.
+    make `cabal` available in your shell, and provides supported haskell
+    packages in nix (requires a `direnv reload` when a new dependency is added
+    to the cabal file).
 
     ```sh
       direnv allow
