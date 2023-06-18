@@ -1,29 +1,29 @@
 # How to use this template
 
-1.  Search and replace the phrase `TEMPLATE` and replace with your project name
-    (in lowercase with no whitespace).
+1.  Rename the `TEMPLATE.cabal` file, and search and replace the phrase
+    `TEMPLATE` and replace with your project name (in lowercase with no
+    whitespace).
 
     ```sh
-      sed -i 's/TEMPLATE/project-name/g' flake.nix package.json html/index.html
+      mv TEMPLATE.cabal project-name.cabal
+      sed -i 's/TEMPLATE/project-name/g' flake.nix *.cabal
     ```
 
 2.  Grant `direnv` permission to load `.envrc`. This will use `flake.nix` to
-    make `yarn` available in your shell.
+    make `cabal` available in your shell.
 
     ```sh
-     direnv allow
+      direnv allow
     ```
 
-3.  Installing the packages in `package.json` will install the Typescript
-    compiler `tsc`.
+3.  Build and run your code during development using `cabal`.
 
     ```sh
-     yarn install
+      cabal run
     ```
 
-4.  Building the project with `yarn` will compile the Typescript code in `src`
-    and copy `css` and `html` into `dist`.
+4.  Build your flake with `nix`.
 
     ```sh
-     yarn build
+      nix build
     ```
