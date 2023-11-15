@@ -18,7 +18,7 @@
       nixpkgsFor = system: import nixpkgs { inherit system; };
       hpkgsFor = system: pkgs:
         with pkgs.haskell.lib;
-        pkgs.haskell.packages.ghc94.override {
+        pkgs.haskell.packages.ghc96.override {
           overrides = self: super: {
           };
         };
