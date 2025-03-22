@@ -9,12 +9,20 @@
         path = ./ghc96;
         description = "Empty GHC 9.6 project";
       };
+      ghc98 = {
+        path = ./ghc98;
+        description = "Empty GHC 9.8 project";
+      };
+      ghc910 = {
+        path = ./ghc98;
+        description = "Empty GHC 9.10 project";
+      };
       servant-typescript = {
         path = ./servant-typescript;
         description = "Servant webserver + typescript website";
       };
 
-      default = self.templates.ghc94;
+      default = self.templates.ghc98;
     };
   };
 }
